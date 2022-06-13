@@ -1,3 +1,8 @@
+:root {
+    --ttgray: #f2f2f2;
+    --ttgrayhover: #e9e9e9;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -15,7 +20,7 @@ header {
     align-items: center;
     position: absolute;
     right: 48px;
-    background-color: #f2f2f2;
+    background-color: var(--ttgray);
     border-radius: 10px;
     box-shadow: 0px 0px 5px 6px #eaeaea;
     height: 300px;
@@ -95,7 +100,7 @@ header {
     align-items: center;
     position: absolute;
     right: 48px;
-    background-color: #f2f2f2;
+    background-color: var(--ttgray);
     border-radius: 10px;
     box-shadow: 0px 0px 5px 6px #eaeaea;
     height: 70px;
@@ -141,7 +146,7 @@ input {
     -ms-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: #f2f2f2;
+    background: var(--ttgray);
     padding: 12px;
     border-radius: 3px;
     width: 550px;
@@ -150,15 +155,20 @@ input {
 }
 
 @media screen and (max-width: 560px) {
-    input {
+    input, .listItems {
         width: 400px;
     }
+}
+
+#inputWrapper {
+    background: var(--ttgray);
+    border-radius: 3px;
 }
 
 .custom-field .placeholder {
     position: absolute;
     left: 12px;
-    top: calc(50% + 10px);
+    top: 43px;
     transform: translateY(-50%);
     color: #aaa;
     transition:
@@ -174,12 +184,39 @@ input {
     color: #222;
 }
 
+.expand {
+    height: 225px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li {
+    height: 45px;
+    background-color: var(--ttgray);
+    width: 550px;
+}
+
+ul li span {
+    position: relative;
+    top: 25%;
+    left: 12px;
+}
+
+ul li:hover {
+    background: var(--ttgrayhover);
+}
+
 #surpriseButtons {
     display: flex;
 }
 
 #randomFact, #doNotClick {
-    background: #f2f2f2;
+    background: var(--ttgray);
     border-radius: 20px;
     margin: 10px 35px 10px 35px;
     width: 140px;
@@ -201,5 +238,18 @@ input {
 }
 
 #randomFact:hover, #doNotClick:hover {
-    background: #e9e9e9;
+    background: var(--ttgrayhover);
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+}
+
+a:link {
+    text-decoration: none;
 }
